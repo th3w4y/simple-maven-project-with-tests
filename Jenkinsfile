@@ -15,10 +15,11 @@ pipeline {
             }
         }
         
-        stage ('Deploy to Test environment') {
+        stage ('Notify') {
             steps {
-                sh 'echo Deploy to Test environment TBD'
+              sh 'Notify Slack/HipChat/etc/...'
             }
         }
+
     }
 }
