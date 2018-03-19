@@ -1,5 +1,7 @@
 pipeline { 
-    agent any
+    agent {
+        label 'maven-jdk-8'
+    }
     tools {
         maven 'Maven 3.5.2'
         jdk 'jdk8'
