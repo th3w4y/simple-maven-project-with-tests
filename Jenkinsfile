@@ -24,5 +24,11 @@ pipeline {
                 }
             }
         }
+        
+        stage ('Deploy to Test environment') {
+            steps {
+                sh 'echo Deploy to Test environment TBD'
+            }
+        }
     }
 }
