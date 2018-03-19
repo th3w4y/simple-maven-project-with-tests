@@ -17,7 +17,7 @@ pipeline {
         
         stage ('Notify') {
             steps {
-              sh 'Notify Slack/HipChat/etc/...'
+              sh 'echo "Notify Slack/HipChat/etc/..."'
             }
         }
 
