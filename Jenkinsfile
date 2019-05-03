@@ -13,9 +13,8 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                container('maven') {
                     sh 'mvn -Dmaven.test.failure.ignore=true package'
-                }
+
             }
             post {
                 success {
