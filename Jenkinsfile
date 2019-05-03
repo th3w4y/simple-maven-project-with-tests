@@ -1,10 +1,21 @@
 pipeline { 
-    agent any
+    agent {
+        kubernetes {
+          //cloud 'kubernetes'
+          label 'mypod'
+          containerTemplate {
+            name 'maven'
+            image 'maven:3.3.9-jdk-8-alpine'
+            ttyEnabled true
+            command 'cat'
+          }
+        }
     stages {
-
         stage ('Build') {
             steps {
-                sh 'mvn -Dmaven.test.failure.ignore=true package'
+                container('maven') {
+                    sh 'mvn -Dmaven.test.failure.ignore=true package'
+                }
             }
             post {
                 success {
